@@ -23,4 +23,8 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:image,:description)
     end
+    
+  def show
+    @favorites_count = topic.fvorite_user.count
+  end
 end

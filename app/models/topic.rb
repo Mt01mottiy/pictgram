@@ -4,7 +4,7 @@ class Topic < ApplicationRecord
   validates :image, presence: true
   
   belongs_to :user
-  belongs_to :favorites
+  
   mount_uploader :image, ImageUploader
   has_many :favorites
   has_many :favorite_users, through: :favorites, source: 'user'
